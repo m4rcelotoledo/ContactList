@@ -143,7 +143,7 @@ GEM
     nokogiri (1.10.2)
       mini_portile2 (~> 2.4.0)
     parallel (1.17.0)
-    parser (2.6.2.0)
+    parser (2.6.2.1)
       ast (~> 2.4.0)
     path_expander (1.0.3)
     pg (1.1.4)
@@ -212,7 +212,7 @@ GEM
       rspec-mocks (~> 3.8.0)
       rspec-support (~> 3.8.0)
     rspec-support (3.8.0)
-    rubocop (0.67.1)
+    rubocop (0.67.2)
       jaro_winkler (~> 1.5.1)
       parallel (~> 1.10)
       parser (>= 2.5, != 2.5.1.1)
@@ -220,6 +220,8 @@ GEM
       rainbow (>= 2.2.2, < 4.0)
       ruby-progressbar (~> 1.7)
       unicode-display_width (>= 1.4.0, < 1.6)
+    rubocop-performance (1.0.0)
+      rubocop (>= 0.58.0)
     ruby-progressbar (1.10.0)
     ruby_dep (1.5.0)
     ruby_parser (3.13.1)
@@ -313,6 +315,7 @@ DEPENDENCIES
   rails (~> 5.2, >= 5.2.3)
   rspec-rails (~> 3.8, >= 3.8.2)
   rubocop
+  rubocop-performance
   rubycritic
   sass-rails (~> 5.0, >= 5.0.7)
   shoulda-matchers (~> 4.0, >= 4.0.1)

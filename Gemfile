@@ -23,6 +23,7 @@ group :development, :test do
   gem 'pry-byebug', '~> 3.7'
   gem 'rspec-rails', '~> 3.8', '>= 3.8.2'
   gem 'rubocop'
+  gem 'rubocop-performance'
   gem 'rubycritic'
   gem 'shoulda-matchers', '~> 4.0', '>= 4.0.1'
   gem 'simplecov'
