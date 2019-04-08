@@ -4,7 +4,9 @@ RSpec.describe 'Track', type: :request do
   describe 'POST /track' do
     let(:guid) { SecureRandom.uuid }
     let(:visited_page) { select_page }
-    let(:visited_datetime) { Faker::Time.between(2.days.ago,Date.today, :all) }
+    let(:visited_datetime) do
+      Faker::Time.between(2.days.ago, Time.zone.today, :all)
+    end
     let(:valid_attributes) do
       {
         guid: guid,
@@ -28,6 +30,6 @@ RSpec.describe 'Track', type: :request do
 end
 
 def select_page
-  page_list = ['Home', 'Blog', 'News', 'About', 'Contact']
+  page_list = %w[Home Blog News About Contact]
   page_list[rand(page_list.length)]
 end
