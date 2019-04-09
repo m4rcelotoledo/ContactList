@@ -2,6 +2,7 @@
 
 * TDD: Added reports to Tracks and Contacts
 * Added Kaminari and Bootstrap gems
+* Added CodeClimate config
 
   *Marcelo Toledo*
 
