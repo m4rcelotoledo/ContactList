@@ -1,0 +1,27 @@
+<p>
+<div class="container-fluid">
+  <p>
+  <div class="row justify-content-md-center">
+    <div class="col-md-auto">
+      <h1>Lista de Tracking</h1>
+    </div>
+  </div>
+  <%= link_to 'Ver lista de contatos', contacts_path %>
+</div>
+
+<%= paginate @tracks %>
+<br>
+<table class="table table-striped">
+  <tr class="thead-dark">
+    <th scope="col">Visitante</th>
+    <th scope="col">Página</th>
+    <th scope="col", class="col-sm-6">Data/Hora</th>
+  </tr>
+  <% @tracks.each do |track| %>
+    <tr>
+      <td scope="row"><%= track.guid %></td>
+      <td><%= track.visited_page %></td>
+      <td><%= track.visited_datetime %></td>
+    </tr>
+  <% end %>
+</table>

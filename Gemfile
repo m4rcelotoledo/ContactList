@@ -4,10 +4,11 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.6.0'
 
 gem 'bootsnap', '~> 1.4', '>= 1.4.2', require: false
-# gem 'bootstrap', '~> 4.3', '>= 4.3.1'
+gem 'bootstrap', '~> 4.3', '>= 4.3.1'
 gem 'coffee-rails', '~> 4.2', '>= 4.2.2'
 gem 'jbuilder', '~> 2.8'
 gem 'jquery-rails', '~> 4.3', '>= 4.3.3'
+gem 'kaminari', '~> 1.1', '>= 1.1.1'
 gem 'pg', '~> 1.1', '>= 1.1.4'
 gem 'puma', '~> 3.12', '>= 3.12.1'
 gem 'rails', '~> 5.2', '>= 5.2.3'
