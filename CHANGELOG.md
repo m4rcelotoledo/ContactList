@@ -1,4 +1,11 @@
-# ContactList 0.0.2 (Apr 08, 2019)
+# ContactList 0.0.3 (Apr 14, 2019)
+
+* Configured CORS (Cross-Origin Resource Sharing)
+* Added validation to GUID on Contact model
+
+  *Marcelo Toledo*
+
+## ContactList 0.0.2 (Apr 08, 2019)
 
 * TDD: Added reports to Tracks and Contacts
 * Added Kaminari and Bootstrap gems
