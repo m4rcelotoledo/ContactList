@@ -1,20 +1,24 @@
-[![Maintainability][codeclimate-badge-maintainability]][codeclimate-maintainability] [![Test Coverage][codeclimate-badge-coverage]][codeclimate-coverage] [![Build Status][travis-badge]][travis]
-
 # README
+
+[![Maintainability][codeclimate-badge-maintainability]][codeclimate-maintainability] [![Test Coverage][codeclimate-badge-coverage]][codeclimate-coverage] [![Build Status][travis-badge]][travis]
 
 ## About this project
 
-Is a Rails application to management Contacts and Data Tracking captured from another app. It can list all Contacts and Data Tracking.
+This project is the Back-end and should be work together with [sample_tracking](https://github.com/marcelotoledo5000/sample_tracking).
 
-Using REST API, is possible to receive, via POST, the information from other sites.
+Is a Rails application to management Contacts and Data Tracking captured from another app (sample_tracking).
+
+It should list all created Contacts and Data Tracking received bye REST API. This API allows receiving, via POST, both the Contacts and Data Tracking from other sites that using the [libTracking.js](https://github.com/marcelotoledo5000/sample_tracking/blob/master/public/assets/js/libTracking.js).
 
 ## Technical Informations and dependencies
 
 * The Ruby language - version 2.6.0
-* The Rails gem - version 5.2.3
-* RSpec: 3.8.2
-* Rubocop: 0.67.2
-* PostgreSQL
+* The Rails gem     - version 5.2.3
+* RSpec             - version 3.8.2
+* Rubocop           - version 0.67.2
+* PostgreSQL        - version 10
+* Docker            - version 18.09.4
+* Docker Compose    - version 1.24.0
 
 ## To use
 
@@ -40,10 +44,10 @@ host: db          # when using docker
 ### With Docker
 
 ``` Shell
-script/setup # => development bootstrap, preparing containers
-script/server # => starts server
-script/console # => starts console
-script/test # => running tests
+script/setup    # => development bootstrap, preparing containers
+script/server   # => starts server
+script/console  # => starts console
+script/test     # => running tests
 ```
 
 ### Running Local
