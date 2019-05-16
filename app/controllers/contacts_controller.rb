@@ -1,4 +1,5 @@
 class ContactsController < ApplicationController
+  # POST /contacts
   def create
     @contact = Contact.create!(contact_params)
 
@@ -6,7 +7,8 @@ class ContactsController < ApplicationController
   end
 
   def index
-    @contacts = Contact.all
+    @contacts = Contact.order(created_at: :desc).page params[:page]
+  end
 
     @contacts = @contacts.order(created_at: :desc).page params[:page]
   end
@@ -14,6 +16,6 @@ class ContactsController < ApplicationController
   private
 
   def contact_params
-    params.permit(:name, :email, :guid)
+    params.permit(:email, :name, :guid)
   end
 end

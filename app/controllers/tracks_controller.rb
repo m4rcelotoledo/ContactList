@@ -1,4 +1,5 @@
 class TracksController < ApplicationController
+  # POST /tracks
   def create
     @track = Track.create!(track_params)
 
@@ -6,7 +7,7 @@ class TracksController < ApplicationController
   end
 
   def index
-    @tracks = Track.all
+    @tracks = Track.order(created_at: :desc).page params[:page]
 
     @tracks = @tracks.order(created_at: :desc).page params[:page]
   end
