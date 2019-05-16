@@ -8,8 +8,13 @@ class TracksController < ApplicationController
 
   def index
     @tracks = Track.order(created_at: :desc).page params[:page]
+  end
 
-    @tracks = @tracks.order(created_at: :desc).page params[:page]
+  # GET /tracks/:id
+  def show
+    @track = Track.find(params[:id])
+
+    json_response @track
   end
 
   private

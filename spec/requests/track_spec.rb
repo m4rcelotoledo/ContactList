@@ -44,6 +44,35 @@ RSpec.describe 'Track', type: :request do
       end
     end
   end
+
+  describe 'GET /tracks/:id' do
+    context 'when the record does not exist' do
+      before { get '/tracks/1000' }
+
+      it 'returns status :not_found (404)' do
+        expect(response).to have_http_status :not_found
+      end
+
+      it 'returns a not found message' do
+        expect(response.body).to match(/Couldn't find Track/)
+      end
+    end
+
+    context 'when the record exists' do
+      let(:track) { create(:track) }
+
+      before { get "/tracks/#{track.id}" }
+
+      it 'returns the track' do
+        expect(json).not_to be_empty
+        expect(json['id']).to eq track.id
+      end
+
+      it 'returns status :ok (200)' do
+        expect(response).to have_http_status :ok
+      end
+    end
+  end
 end
 
 def select_page
