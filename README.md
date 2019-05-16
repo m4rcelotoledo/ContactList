@@ -14,10 +14,11 @@ It should list all created Contacts and Data Tracking received bye REST API. Thi
 
 * The Ruby language - version 2.6.0
 * The Rails gem     - version 5.2.3
-* RSpec             - version 3.8.2
-* Rubocop           - version 0.67.2
+* RSpec             - version 3.8.3
+* Capybara          - version 3.20.0
+* Rubocop           - version 0.69.0
 * PostgreSQL        - version 10
-* Docker            - version 18.09.4
+* Docker            - version 18.09.5
 * Docker Compose    - version 1.24.0
 
 ## To use
@@ -29,19 +30,7 @@ git clone git@github.com:marcelotoledo5000/ContactList.git
 cd ContactList
 ```
 
-Needs to update `config/database.yml` to use in:
-
-``` Yaml
-host: localhost   # when using localhost
-```
-
-OR
-
-``` Yaml
-host: db          # when using docker
-```
-
-### With Docker
+### With Docker (better option)
 
 ``` Shell
 script/setup    # => development bootstrap, preparing containers
@@ -50,15 +39,167 @@ script/console  # => starts console
 script/test     # => running tests
 ```
 
-### Running Local
+#### Running without Docker (not recommended!)
+
+If you prefer, you'll need to update `config/database.yml`:
+
+``` Yaml
+# host: db        # when using docker
+host: localhost   # when using localhost
+```
 
 System dependencies:
 
 * Install and configure the database: [Postgresql-10](https://www.postgresql.org/download/)
 
+And then:
+
+``` Shell
+gem install bundler         # => install the last Bundler version
+bundle install              # => install the project's gems
+rails db:setup db:migrate   # => prepare the database
+rails s                     # => starts server
+rails c                     # => starts console
+bundle exec rspec           # => to running tests
+```
+
 ### To run app
 
 To see the application in action, starts the rails server to able [http://localhost:3000/](http://localhost:3000.)
+
+### API Documentation
+
+#### Authentication
+
+* Do not need to use authentication yet.
+
+#### Domain
+
+[http://localhost:3000/](http://localhost:3000)
+
+#### Endpoints
+
+##### CONTACTS
+
+INDEX
+
+```code
+GET: http://DOMAIN/contacts
+"http://localhost:3000/contacts"
+```
+
+Response:
+
+```code
+200 Ok
+```
+
+SHOW
+
+```code
+GET: http://DOMAIN/contacts/:id
+"http://localhost:3000/contacts/1"
+```
+
+Response:
+
+```code
+200 Ok
+```
+
+CREATE
+
+```code
+POST: http://DOMAIN/contacts
+"http://localhost:3000/contacts"
+Param: Body, JSON(application/json)
+```
+
+```json
+{
+  "email": "vladimir@harkonnen.com",
+  "name": "Vladimir Harkonnen",
+  "guid": "5834417a-e646-49b8-b1d6-92d8812291c9"
+}
+```
+
+Response:
+
+```code
+201 Created
+```
+
+UPDATE
+
+```code
+PUT: http://DOMAIN/contacts
+"http://localhost:3000/contacts"
+Param: Body, JSON(application/json)
+```
+
+```json
+{
+  "email": "vladimir@harkonnen.com",
+  "name": "Vladimir Harkonnen",
+  "guid": "5834417a-e646-49b8-b1d6-92d8812291c9"
+}
+```
+
+Response:
+
+```code
+204 No Content
+```
+
+##### TRACKS
+
+INDEX
+
+```code
+GET: http://DOMAIN/tracks
+"http://localhost:3000/tracks"
+```
+
+Response:
+
+```code
+200 Ok
+```
+
+SHOW
+
+```code
+GET: http://DOMAIN/tracks/:id
+"http://localhost:3000/tracks/1"
+```
+
+Response:
+
+```code
+200 Ok
+```
+
+CREATE
+
+```code
+POST: http://DOMAIN/tracks
+"http://localhost:3000/tracks"
+Param: Body, JSON(application/json)
+```
+
+```json
+{
+  "guid": "5834417a-e646-49b8-b1d6-92d8812291c9",
+  "visited_page": "http://localhost:4567/home",
+  "visited_datetime": "2019-05-14 04:22:10 UTC",
+}
+```
+
+Response:
+
+```code
+201 Created
+```
 
 [codeclimate-badge-maintainability]: https://api.codeclimate.com/v1/badges/6c7b7281c2b791bb3b95/maintainability
 [codeclimate-maintainability]: https://codeclimate.com/github/marcelotoledo5000/ContactList/maintainability

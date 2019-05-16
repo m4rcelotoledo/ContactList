@@ -1,4 +1,5 @@
 class TracksController < ApplicationController
+  # POST /tracks
   def create
     @track = Track.create!(track_params)
 
@@ -6,9 +7,14 @@ class TracksController < ApplicationController
   end
 
   def index
-    @tracks = Track.all
+    @tracks = Track.order(created_at: :desc).page params[:page]
+  end
 
-    @tracks = @tracks.order(created_at: :desc).page params[:page]
+  # GET /tracks/:id
+  def show
+    @track = Track.find(params[:id])
+
+    json_response @track
   end
 
   private

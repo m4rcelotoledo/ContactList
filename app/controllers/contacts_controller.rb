@@ -1,4 +1,7 @@
 class ContactsController < ApplicationController
+  before_action :set_contact, only: %i[show update]
+
+  # POST /contacts
   def create
     @contact = Contact.create!(contact_params)
 
@@ -6,14 +9,30 @@ class ContactsController < ApplicationController
   end
 
   def index
-    @contacts = Contact.all
+    @contacts = Contact.order(created_at: :desc).page params[:page]
+  end
 
-    @contacts = @contacts.order(created_at: :desc).page params[:page]
+  # GET /contacts/:id
+  def show
+    json_response @contact
+  end
+
+  # PUT /contacts/:id
+  def update
+    contact.update(contact_params)
+
+    head :no_content
   end
 
   private
 
+  attr_accessor :contact
+
   def contact_params
-    params.permit(:name, :email, :guid)
+    params.permit(:email, :name, :guid)
+  end
+
+  def set_contact
+    @contact = Contact.find(params[:id])
   end
 end

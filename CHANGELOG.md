@@ -1,7 +1,21 @@
-# ContactList 0.0.3 (Apr 14, 2019)
+# ContactList 0.0.4 (Mai 16, 2019)
+
+* TDD: Added some error treatments for creating Contacts and Tracks
+* TDD: Added Show and Update actions to ContactsController
+* TDD: Added Show action to TracksController
+* Added tests to Controllers using Shoulda Matchers
+* Added `.codeclimate.yml` and `.reek.yml`
+* Updated Postgres in `.travis.yml`
+* Updated Gems
+* Updated `README.md`
+
+  *Marcelo Toledo*
+
+## ContactList 0.0.3 (Apr 14, 2019)
 
 * Configured CORS (Cross-Origin Resource Sharing)
 * Added validation to GUID on Contact model
+* Created `README.md`
 
   *Marcelo Toledo*
 
