@@ -12,14 +12,14 @@ It should list all created Contacts and Data Tracking received bye REST API. Thi
 
 ## Technical Informations and dependencies
 
-* The Ruby language - version 2.6.0
-* The Rails gem     - version 5.2.3
-* RSpec             - version 3.8.3
-* Capybara          - version 3.20.0
-* Rubocop           - version 0.69.0
+* The Ruby language - version 2.7.0
+* The Rails gem     - version 6.0
+* RSpec             - version 4.0.0.beta4
+* Capybara          - version 3.30.0
+* Rubocop           - version 0.79.0
 * PostgreSQL        - version 10
-* Docker            - version 18.09.5
-* Docker Compose    - version 1.24.0
+* Docker            - version 19.03.5-ce
+* Docker Compose    - version 1.25.1
 
 ## To use
 
