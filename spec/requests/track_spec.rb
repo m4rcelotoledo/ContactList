@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe 'Track', type: :request do
+describe 'Track', type: :request do
   describe 'POST /tracks' do
     let(:guid) { SecureRandom.uuid }
     let(:visited_page) { select_page }

@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe 'Contacts', type: :request do
+describe 'Contacts', type: :request do
   describe 'POST /contacts' do
     let(:email) { Faker::Internet.unique.email }
     let(:name) { Faker::Books::Dune.character }
