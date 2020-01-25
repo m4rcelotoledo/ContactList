@@ -1,4 +1,12 @@
-# ContactList 0.0.4 (Mai 16, 2019)
+# ContactList 0.0.5 (Jan 25, 2020)
+
+* Update Ruby version
+* Update Rails version
+* Update Rubocop and a lot of gems
+
+  *Marcelo Toledo*
+
+## ContactList 0.0.4 (Mai 16, 2019)
 
 * TDD: Added some error treatments for creating Contacts and Tracks
 * TDD: Added Show and Update actions to ContactsController

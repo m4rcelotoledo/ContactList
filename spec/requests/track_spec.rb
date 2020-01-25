@@ -1,11 +1,15 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
-RSpec.describe 'Track', type: :request do
+describe 'Track', type: :request do
   describe 'POST /tracks' do
     let(:guid) { SecureRandom.uuid }
     let(:visited_page) { select_page }
     let(:visited_datetime) do
-      Faker::Time.between(2.days.ago, Time.zone.today, :all)
+      Faker::Time.between_dates(
+        from: 2.days.ago, to: Time.zone.today, period: :all
+      )
     end
 
     context 'when the request is valid' do

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 feature 'Index contacts' do
@@ -5,7 +7,7 @@ feature 'Index contacts' do
     visit root_path
     click_on 'Ver lista de contatos'
 
-    expect(current_path).to eq contacts_path
+    expect(page).to have_current_path contacts_path, ignore_query: true
     expect(page).to have_css('h1', text: 'Lista de Contatos')
     expect(page).to have_css('th', text: 'Email')
     expect(page).to have_css('th', text: 'Nome')
