@@ -6,7 +6,9 @@ RSpec.describe TracksController, type: :controller do
       params = {
         guid: SecureRandom.uuid,
         visited_page: 'Home',
-        visited_datetime: Faker::Time.between(2.days.ago, Time.zone.today)
+        visited_datetime: Faker::Time.between_dates(
+          from: 2.days.ago, to: Time.zone.today, period: :all
+        )
       }
       should permit(:guid, :visited_page, :visited_datetime).
         for(:create, params: params)

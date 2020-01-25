@@ -5,6 +5,8 @@ FactoryBot.define do
       page_list = %w[Home Blog News About Contact]
       page_list[rand(page_list.length)]
     end
-    visited_datetime { Faker::Time.between(2.days.ago, Time.zone.today, :all) }
+    visited_datetime do
+      Faker::Time.between_dates(from: 2.days.ago, to: Time.zone.today, period: :all)
+    end
   end
 end

@@ -7,7 +7,9 @@ end
   Track.create([{
     guid: SecureRandom.uuid,
     visited_page: select_page,
-    visited_datetime: Faker::Time.between(2.days.ago, Time.zone.today, :all)
+    visited_datetime: Faker::Time.between_dates(
+      from: 2.days.ago, to: Time.zone.today, period: :all
+    )
   }])
 end
 
