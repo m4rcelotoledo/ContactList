@@ -1,4 +1,10 @@
-# ContactList 0.0.5 (Jan 25, 2020)
+# ContactList 0.0.6 (Sep 12, 2020)
+
+* Bump a lot of gems
+
+  *Marcelo Toledo*
+
+## ContactList 0.0.5 (Jan 25, 2020)
 
 * Update Ruby version
 * Update Rails version
