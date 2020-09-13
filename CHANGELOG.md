@@ -1,6 +1,10 @@
 # ContactList 0.0.6 (Sep 12, 2020)
 
 * Bump a lot of gems
+* Update Rails Application
+* Update schema
+* Update Rubocop setup
+* Remove ActiveStorage and Sprockets
 
   *Marcelo Toledo*
 
