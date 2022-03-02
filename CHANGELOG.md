@@ -1,4 +1,17 @@
-# ContactList 0.0.6 (Sep 12, 2020)
+# ContactList 0.0.7 (Mar 2, 2022)
+
+-   Bump a lot of gems to fix vulnerabilities
+-   Update schema
+-   Update Rubocop setup
+-   Remove travis-ci
+-   Remove CodeClimate
+-   Setup Github Actions Workflows
+-   Update development bootstrap
+-   Update docker-compose
+
+    _Marcelo Toledo_
+
+## ContactList 0.0.6 (Sep 12, 2020)
 
 -   Bump a lot of gems
 -   Update Rails Application
