@@ -21,7 +21,7 @@ Layout/DotPosition:
   EnforcedStyle: trailing
 
 Metrics/BlockLength:
-  ExcludedMethods: ['describe', 'context', 'feature', 'scenario', 'let']
+  IgnoredMethods: ['describe', 'context', 'feature', 'scenario', 'let']
 
 RSpec/ExampleLength:
   Enabled: false
