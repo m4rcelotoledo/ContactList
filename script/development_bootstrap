@@ -1,6 +1,7 @@
 #!/bin/bash
 
 echo "Installing bundler"
+gem uninstall bundler -y
 gem install bundler
 
 echo "Installing gems"
