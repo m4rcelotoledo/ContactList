@@ -8,7 +8,7 @@ This project is the Back-end and should be work together with [sample_tracking](
 
 Is a Rails application to management Contacts and Data Tracking captured from another app (sample_tracking).
 
-It should list all created Contacts and Data Tracking received bye REST API. This API allows receiving, via POST, both the Contacts and Data Tracking from other sites that using the [libTracking.js](https://github.com/marcelotoledo5000/sample_tracking/blob/master/public/assets/js/libTracking.js).
+It should list all created Contacts and Data Tracking received by REST API. This API allows receiving, via POST, both the Contacts and Data Tracking from other sites that using the [libTracking.js](https://github.com/marcelotoledo5000/sample_tracking/blob/master/public/assets/js/libTracking.js).
 
 ## Technical Informations and dependencies
 
