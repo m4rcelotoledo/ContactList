@@ -13,7 +13,7 @@ AllCops:
   NewCops: enable
 
   TargetRailsVersion: 6.1
-  TargetRubyVersion: 2.7.0
+  TargetRubyVersion: 2.7
 
   UseCache: false
 
