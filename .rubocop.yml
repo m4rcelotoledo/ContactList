@@ -1,4 +1,4 @@
-require:
+plugins:
   - rubocop-performance
   - rubocop-rails
   - rubocop-rspec
@@ -12,8 +12,8 @@ AllCops:
 
   NewCops: enable
 
-  TargetRailsVersion: 6.1
-  TargetRubyVersion: 2.7
+  TargetRailsVersion: 7.2
+  TargetRubyVersion: 3.4
 
   UseCache: false
 
@@ -21,7 +21,8 @@ Layout/DotPosition:
   EnforcedStyle: trailing
 
 Metrics/BlockLength:
-  IgnoredMethods: ['describe', 'context', 'feature', 'scenario', 'let']
+  Exclude:
+    - spec/**/*
 
 RSpec/ExampleLength:
   Enabled: false
@@ -29,9 +30,6 @@ RSpec/MultipleExpectations:
   Enabled: false
 RSpec/MultipleMemoizedHelpers:
   Enabled: false
-
-RSpec/Capybara/FeatureMethods:
-  EnabledMethods: ['feature', 'scenario', 'xscenario','given', 'background']
 
 Style/ClassAndModuleChildren:
   EnforcedStyle: compact

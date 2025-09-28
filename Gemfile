@@ -26,10 +26,10 @@ group :development, :test do
   gem 'pry-byebug', '~> 3.10'
   gem 'rails-controller-testing', '~> 1.0'
   gem 'rspec-rails'
-  gem 'rubocop', '~> 1.50'
-  gem 'rubocop-performance', '~> 1.16'
-  gem 'rubocop-rails', '~> 2.19'
-  gem 'rubocop-rspec', '~> 2.20'
+  gem 'rubocop', require: false
+  gem 'rubocop-performance', require: false
+  gem 'rubocop-rails', require: false
+  gem 'rubocop-rspec', require: false
   gem 'rubycritic', '~> 4.7'
   gem 'shoulda-matchers', '~> 5.3'
   gem 'simplecov', '~> 0.22'
