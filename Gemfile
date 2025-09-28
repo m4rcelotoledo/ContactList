@@ -1,45 +1,44 @@
 # frozen_string_literal: true
 
 source 'https://rubygems.org'
-git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.7.0'
+ruby '3.4.6'
 
-gem 'bootsnap', '~> 1.4', require: false
-gem 'bootstrap', '~> 4.4'
+gem 'bootsnap', '~> 1.18', require: false
+gem 'bootstrap', '~> 4.6'
 gem 'coffee-rails', '~> 5.0'
-gem 'jbuilder', '~> 2.9'
-gem 'jquery-rails', '~> 4.3'
+gem 'jbuilder', '~> 2.11'
+gem 'jquery-rails', '~> 4.4'
 gem 'kaminari', '~> 1.2'
-gem 'pg', '~> 1.2'
-gem 'puma', '~> 4.3'
+gem 'pg', '~> 1.4'
+gem 'puma', '~> 6.0'
 gem 'rack-cors', '~> 1.1'
-gem 'rails', '~> 6.0'
+gem 'rails', '~> 7.0'
 gem 'sass-rails', '~> 6.0'
+gem 'terser', '~> 1.1'
 gem 'turbolinks', '~> 5.2'
-gem 'uglifier', '~> 4.2'
 
 group :development, :test do
-  gem 'capybara'
-  gem 'database_cleaner'
-  gem 'factory_bot_rails'
-  gem 'faker'
-  gem 'pry-byebug'
-  gem 'rails-controller-testing'
+  gem 'capybara', '~> 3.39'
+  gem 'database_cleaner-active_record', '~> 2.0'
+  gem 'factory_bot_rails', '~> 6.2'
+  gem 'faker', '~> 2.23'
+  gem 'pry-byebug', '~> 3.10'
+  gem 'rails-controller-testing', '~> 1.0'
   gem 'rspec-rails'
-  gem 'rubocop'
-  gem 'rubocop-performance'
-  gem 'rubocop-rails'
-  gem 'rubocop-rspec'
-  gem 'rubycritic'
-  gem 'shoulda-matchers'
-  gem 'simplecov'
+  gem 'rubocop', '~> 1.50'
+  gem 'rubocop-performance', '~> 1.16'
+  gem 'rubocop-rails', '~> 2.19'
+  gem 'rubocop-rspec', '~> 2.20'
+  gem 'rubycritic', '~> 4.7'
+  gem 'shoulda-matchers', '~> 5.3'
+  gem 'simplecov', '~> 0.22'
 end
 
 group :development do
-  gem 'brakeman'
-  gem 'listen'
-  gem 'spring'
-  gem 'spring-watcher-listen'
-  gem 'web-console'
+  gem 'brakeman', '~> 5.4'
+  gem 'listen', '~> 3.8'
+  gem 'spring', '~> 4.1'
+  gem 'spring-watcher-listen', '~> 2.1'
+  gem 'web-console', '~> 4.2'
 end
