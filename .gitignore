@@ -25,3 +25,5 @@
 
 # Ignore coverage
 coverage
+
+.tool-versions
