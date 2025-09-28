@@ -1,15 +1,9 @@
 # frozen_string_literal: true
 
 class TracksController < ApplicationController
-  # POST /tracks
-  def create
-    @track = Track.create!(track_params)
-
-    json_response(@track, :created)
-  end
-
   def index
     @tracks = Track.order(created_at: :desc).page params[:page]
+    render layout: false
   end
 
   # GET /tracks/:id
@@ -17,6 +11,13 @@ class TracksController < ApplicationController
     @track = Track.find(params[:id])
 
     json_response @track
+  end
+
+  # POST /tracks
+  def create
+    @track = Track.create!(track_params)
+
+    json_response(@track, :created)
   end
 
   private
