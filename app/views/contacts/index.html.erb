@@ -1,25 +1,17 @@
-<p>
-<div class="container-fluid">
-  <p>
-  <div class="row justify-content-md-center">
-    <div class="col-md-auto">
-      <h1>Lista de Contatos</h1>
-    </div>
-  </div>
-  <%= link_to 'Ver lista de tracking', root_path %>
-</div>
+<h1>Lista de Contatos</h1>
+<%= link_to 'Ver lista de tracking', root_path %>
 
 <%= paginate @contacts %>
-<br>
-<table class="table table-striped">
-  <tr class="thead-dark">
-    <th scope="col">Email</th>
-    <th scope="col">Nome</th>
-    <th scope="col", class="col-sm-6">GUID</th>
+
+<table>
+  <tr>
+    <th>Email</th>
+    <th>Nome</th>
+    <th>GUID</th>
   </tr>
   <% @contacts.each do |contact| %>
     <tr>
-      <td scope="row"><%= contact.email %></td>
+      <td><%= contact.email %></td>
       <td><%= contact.name %></td>
       <td><%= contact.guid %></td>
     </tr>
