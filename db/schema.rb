@@ -10,8 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_13_041648) do
-
+ActiveRecord::Schema[7.2].define(version: 2020_09_13_041648) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -19,17 +18,16 @@ ActiveRecord::Schema.define(version: 2020_09_13_041648) do
     t.string "email", null: false
     t.string "name", null: false
     t.string "guid", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at", precision: nil, null: false
+    t.datetime "updated_at", precision: nil, null: false
     t.index ["email"], name: "index_contacts_on_email", unique: true
   end
 
   create_table "tracks", force: :cascade do |t|
     t.string "guid", null: false
     t.string "visited_page", null: false
-    t.datetime "visited_datetime", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "visited_datetime", precision: nil, null: false
+    t.datetime "created_at", precision: nil, null: false
+    t.datetime "updated_at", precision: nil, null: false
   end
-
 end
