@@ -1,16 +1,14 @@
-# https://github.com/marcelotoledo5000/Dockerfiles
-# https://hub.docker.com/repository/docker/skygvinn/alpine-ruby2.7.0-nodejs
-
-version: '3.6'
-
 services:
   db:
-    image: postgres
+    image: postgres:15
     restart: always
     environment:
       POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: contact_list_development
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
   server:
-    image: skygvinn/alpine-ruby2.7.0-nodejs:v1.0
+    image: ruby:3.4.6-alpine
     container_name: contact_list
     ports:
       - "3000:3000"
@@ -18,9 +16,13 @@ services:
       - BUNDLE_PATH=vendor/bundle
       - BUNDLE_DISABLE_SHARED_GEMS=1
       - RUBYOPT=-W0
+      - RAILS_ENV=development
     volumes:
       - .:/var/www/contact_list:Z
     working_dir: /var/www/contact_list
-    command: bundle exec rails s -b 0.0.0.0
+    command: sh -c "apk add --no-cache build-base postgresql-dev nodejs npm yaml-dev tzdata && bundle install && bundle exec rails s -b 0.0.0.0"
     depends_on:
       - db
+
+volumes:
+  postgres_data:
