@@ -3,20 +3,21 @@
 class ContactsController < ApplicationController
   before_action :set_contact, only: %i[show update]
 
-  # POST /contacts
-  def create
-    @contact = Contact.create!(contact_params)
-
-    json_response(@contact, :created)
-  end
-
   def index
     @contacts = Contact.order(created_at: :desc).page params[:page]
+    render layout: false
   end
 
   # GET /contacts/:id
   def show
     json_response @contact
+  end
+
+  # POST /contacts
+  def create
+    @contact = Contact.create!(contact_params)
+
+    json_response(@contact, :created)
   end
 
   # PUT /contacts/:id
