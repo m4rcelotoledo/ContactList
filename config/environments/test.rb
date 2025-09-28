@@ -14,9 +14,15 @@ Rails.application.configure do
   config.cache_store = :null_store
   config.action_dispatch.show_exceptions = false
   config.action_controller.allow_forgery_protection = false
+
+  # Host Authorization - necessário para testes de request
+  config.hosts.clear
+  config.hosts << "www.example.com"
+  config.hosts << "example.com"
+  config.hosts << "localhost"
+
+  config.force_ssl = false
   config.assets.compile = true
-  config.assets.js_compressor = :uglifier
-  # config.assets.css_compressor = :sass
   config.action_mailer.perform_caching = false
   config.action_mailer.delivery_method = :test
   config.active_support.deprecation = :stderr
