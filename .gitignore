@@ -27,3 +27,4 @@
 coverage
 
 .tool-versions
+spec/examples.txt
