@@ -1,6 +1,6 @@
 # README
 
-[![Maintainability][codeclimate-badge-maintainability]][codeclimate-maintainability] [![Test Coverage][codeclimate-badge-coverage]][codeclimate-coverage] [![Build Status][travis-badge]][travis]
+[![Maintainability][codeclimate-badge-maintainability]][codeclimate-maintainability] [![Test Coverage][codeclimate-badge-coverage]][codeclimate-coverage]
 
 ## About this project
 
@@ -222,6 +222,3 @@ Response:
 
 [codeclimate-badge-coverage]: https://api.codeclimate.com/v1/badges/6c7b7281c2b791bb3b95/test_coverage
 [codeclimate-coverage]: https://codeclimate.com/github/marcelotoledo5000/ContactList/test_coverage
-
-[travis-badge]: https://travis-ci.com/marcelotoledo5000/ContactList.svg?branch=master
-[travis]: https://travis-ci.com/marcelotoledo5000/ContactList
